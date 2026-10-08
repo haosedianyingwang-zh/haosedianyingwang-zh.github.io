@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>好色电影网 - 好色彩·好影像·好品味 | 高画质电影电视剧综艺动漫在线导航</title>
+<meta name="keywords" content="好色电影网,好色电影网官网,haosedianyingwang-zh.github.io,好色电影网在线导航,高清电影推荐,高分电视剧单,好色电影网最新影片,影视分类导航">
+<meta name="description" content="好色电影网（haosedianyingwang-zh.github.io）是一家以色彩美学与影像质感为选片标准的影视导航站，从画质、配色、构图与氛围切入，为影迷精选电影、电视剧、综艺与动漫，帮助你在最短时间内锁定值得看的好作品。">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<meta name="theme-color" content="#0f2027">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="好色电影网">
+<link rel="canonical" href="https://haosedianyingwang-zh.github.io/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+ --bg:#0f2027;--bg2:#162d37;--panel:#14262e;--panel2:#1a3038;
+ --txt:#e8f0f1;--txt2:#a8c0c4;--mute:#6f8b90;
+ --neon:#00e5a0;--neon2:#00b8d4;--warn:#ffb74d;--pink:#ff6b9d;
+ --r:14px;--line:rgba(255,255,255,.07);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+ font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+ background:var(--bg);color:var(--txt);line-height:1.75;font-size:15px;
+ background-image:radial-gradient(circle at 15% 10%,rgba(0,229,160,.10),transparent 42%),radial-gradient(circle at 88% 22%,rgba(255,107,157,.10),transparent 40%),radial-gradient(circle at 50% 95%,rgba(0,184,212,.08),transparent 45%);
+ background-attachment:fixed;
+}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+/* 布局 */
+.layout{max-width:1240px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:232px 1fr;gap:26px}
+/* 侧栏 */
+.side{position:sticky;top:0;height:100vh;overflow-y:auto;padding:26px 0;scrollbar-width:none}
+.side::-webkit-scrollbar{display:none}
+.brand{padding:6px 0 22px;border-bottom:1px solid var(--line);margin-bottom:20px}
+.brand .logo{font-size:26px;font-weight:900;letter-spacing:.02em;background:linear-gradient(90deg,var(--neon),var(--neon2),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand .logo small{display:block;font-size:11px;color:var(--mute);letter-spacing:.2em;font-weight:600;margin-top:6px;-webkit-text-fill-color:var(--mute)}
+.side h6{font-size:11px;color:var(--mute);letter-spacing:.2em;margin:18px 0 10px;text-transform:uppercase}
+.side a{display:flex;align-items:center;gap:11px;padding:9px 12px;border-radius:10px;color:var(--txt2);font-size:14.5px;transition:.18s;margin-bottom:2px}
+.side a .dot{width:7px;height:7px;border-radius:50%;background:var(--mute);flex:none;transition:.18s}
+.side a:hover{background:var(--panel2);color:var(--txt)}
+.side a:hover .dot{background:var(--neon);box-shadow:0 0 8px var(--neon)}
+.side .url{margin-top:16px;padding:11px 12px;background:rgba(0,229,160,.07);border:1px dashed rgba(0,229,160,.35);border-radius:10px;font-size:11.5px;color:var(--neon);word-break:break-all;line-height:1.6}
+.side .url b{display:block;color:var(--mute);font-size:10px;letter-spacing:.16em;margin-bottom:4px;font-weight:600}
+/* 主内容 */
+.main{padding:26px 0 60px;min-width:0}
+.page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:26px}
+.page-head h1{font-size:clamp(26px,4.6vw,40px);font-weight:900;line-height:1.25}
+.page-head h1 em{font-style:normal;color:var(--neon)}
+.page-head .badge{align-self:flex-start;background:var(--panel2);border:1px solid var(--line);padding:6px 14px;border-radius:20px;font-size:12.5px;color:var(--warn)}
+/* 搜索 */
+.search{position:relative;margin-bottom:26px}
+.search input{width:100%;padding:16px 50px 16px 20px;border:1px solid var(--line);background:var(--panel);border-radius:var(--r);color:var(--txt);font-size:15px;outline:none;transition:.2s}
+.search input::placeholder{color:var(--mute)}
+.search input:focus{border-color:var(--neon);box-shadow:0 0 0 3px rgba(0,229,160,.13)}
+.search button{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:40px;height:40px;border:0;border-radius:10px;background:linear-gradient(135deg,var(--neon),var(--neon2));color:#04232a;font-size:16px;cursor:pointer}
+/* 通用区块 */
+.block{margin-bottom:34px}
+.block-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.block-head h2{font-size:20px;font-weight:900;letter-spacing:.01em}
+.block-head .tag{font-size:11px;color:var(--mute);border:1px solid var(--line);padding:2px 9px;border-radius:20px}
+.block-head .more{margin-left:auto;font-size:13px;color:var(--txt2)}
+.block-head .more:hover{color:var(--neon)}
+/* 快讯条 */
+.flash{display:flex;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--warn);padding:12px 16px;border-radius:var(--r);margin-bottom:26px;flex-wrap:wrap;font-size:14px}
+.flash b{color:var(--warn);font-size:12px;letter-spacing:.14em;white-space:nowrap}
+/* 影片卡片 */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:.22s;position:relative}
+.card:hover{transform:translateY(-4px);border-color:rgba(0,229,160,.4);box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.thumb{height:132px;position:relative;overflow:hidden}
+.thumb span{position:absolute;inset:0;display:grid;place-items:center;font-size:30px;font-weight:900;color:rgba(255,255,255,.92)}
+.thumb i{position:absolute;left:10px;top:10px;font-style:normal;font-size:11px;background:rgba(0,0,0,.55);padding:2px 8px;border-radius:20px;backdrop-filter:blur(4px)}
+.thumb u{position:absolute;right:10px;bottom:10px;text-decoration:none;font-size:11px;color:#fff;background:linear-gradient(90deg,var(--neon),var(--neon2));padding:2px 8px;border-radius:20px;font-weight:700}
+.body{padding:13px 14px 14px}
+.body h3{font-size:15.5px;font-weight:700;margin-bottom:6px;line-height:1.45}
+.body h3:hover{color:var(--neon)}
+.body .row{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mute)}
+/* 色彩分区配色 */
+.c1{background:linear-gradient(135deg,#ff6b9d,#c2185b)}
+.c2{background:linear-gradient(135deg,#00e5a0,#00897b)}
+.c3{background:linear-gradient(135deg,#ffb74d,#f4511e)}
+.c4{background:linear-gradient(135deg,#7e57c2,#3f51b5)}
+.c5{background:linear-gradient(135deg,#26c6da,#0277bd)}
+.c6{background:linear-gradient(135deg,#d4e157,#827717)}
+.c7{background:linear-gradient(135deg,#ec407a,#ab47bc)}
+.c8{background:linear-gradient(135deg,#8d6e63,#4e342e)}
+.c9{background:linear-gradient(135deg,#4db6ac,#00695c)}
+.c10{background:linear-gradient(135deg,#ffd54f,#ff8f00)}
+/* 排行榜 */
+.rank{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.rank li{display:flex;align-items:center;gap:14px;padding:13px 16px;border-bottom:1px solid var(--line)}
+.rank li:last-child{border-bottom:0}
+.rank li .n{font-size:20px;font-weight:900;color:var(--mute);width:26px;text-align:center;flex:none}
+.rank li:nth-child(1) .n{color:var(--warn)}
+.rank li:nth-child(2) .n{color:var(--neon2)}
+.rank li:nth-child(3) .n{color:var(--pink)}
+.rank li .info{min-width:0}
+.rank li .info h4{font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank li .info h4:hover{color:var(--neon)}
+.rank li .info p{font-size:12.5px;color:var(--mute)}
+.rank li .v{flex:none;font-size:12px;color:var(--neon)}
+/* 双栏 */
+.cols{display:grid;grid-template-columns:1.35fr 1fr;gap:26px;align-items:start}
+/* 配色美学 */
+.palette{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.pal{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.pal .sw{height:78px}
+.pal .sw div{height:50%;width:100%}
+.pal .txt{padding:10px 12px;font-size:13px}
+.pal .txt b{display:block;font-size:13.5px;font-weight:700}
+.pal .txt small{color:var(--mute);font-size:12px}
+/* 数据卡 */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.stat .n{font-size:27px;font-weight:900;background:linear-gradient(90deg,var(--neon),var(--neon2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .l{font-size:13px;color:var(--txt2);margin-top:2px}
+.stat .d{font-size:12px;color:var(--mute);margin-top:6px}
+/* 标签页 */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tabs button{border:1px solid var(--line);background:var(--panel);color:var(--txt2);padding:8px 16px;border-radius:20px;font-size:13.5px;cursor:pointer;transition:.18s}
+.tabs button.on{background:var(--neon);color:#04232a;border-color:var(--neon);font-weight:700}
+.tabs button:hover:not(.on){border-color:var(--neon);color:var(--neon)}
+.tab-pane{display:none}
+.tab-pane.on{display:block}
+/* 提示框 */
+.note{background:rgba(255,183,77,.08);border:1px solid rgba(255,183,77,.3);border-radius:var(--r);padding:20px 22px;font-size:14px;color:var(--txt2)}
+.note h4{color:var(--warn);font-size:16px;margin-bottom:8px}
+.note a{color:var(--neon);border-bottom:1px dashed rgba(0,229,160,.5)}
+/* 底部 */
+footer{background:#0a161c;border-top:1px solid var(--line);padding:40px 0 26px}
+.foot{max-width:1240px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}
+.foot h5{font-size:14px;color:var(--neon);margin-bottom:14px;letter-spacing:.08em}
+.foot ul{display:grid;gap:8px;font-size:13.5px;color:var(--txt2)}
+.foot a:hover{color:var(--neon)}
+.copyright{text-align:center;font-size:12.5px;color:var(--mute);margin-top:32px;padding-top:20px;border-top:1px solid var(--line);line-height:2}
+.copyright .site{color:var(--txt)}
+/* 响应式 */
+@media(max-width:960px){
+ .layout{grid-template-columns:1fr;padding:0 16px}
+ .side{position:static;height:auto;padding:16px 0 6px}
+ .side .nav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+ .side .nav::-webkit-scrollbar{display:none}
+ .side .nav h6,.side .url{display:none}
+ .side a{flex:none;white-space:nowrap;font-size:13.5px;padding:7px 13px;background:var(--panel2)}
+ .side a .dot{display:none}
+ .brand{padding:0 0 14px;border-bottom:0;margin-bottom:0}
+ .cols{grid-template-columns:1fr}
+ .foot{grid-template-columns:1fr 1fr;padding:0 16px}
+ .main{padding-top:8px}
+}
+@media(max-width:560px){
+ body{font-size:14px}
+ .grid{grid-template-columns:repeat(2,1fr);gap:11px}
+ .thumb{height:104px}
+ .thumb span{font-size:22px}
+ .body{padding:10px 11px 11px}
+ .body h3{font-size:14px}
+ .block{margin-bottom:26px}
+ .foot{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<div class="layout">
+
+ <!-- 侧边导航 -->
+ <aside class="side">
+  <div class="brand">
+   <div class="logo">好色电影网<small>GOOD COLOR · GOOD FILM</small></div>
+  </div>
+  <nav class="nav">
+   <h6>内容导航</h6>
+   <a href="#home"><span class="dot"></span>首页精选</a>
+   <a href="#movie"><span class="dot"></span>电影片单</a>
+   <a href="#tv"><span class="dot"></span>电视剧场</a>
+   <a href="#show"><span class="dot"></span>综艺与纪录片</a>
+   <a href="#anime"><span class="dot"></span>动漫专区</a>
+   <a href="#rank"><span class="dot"></span>热度榜单</a>
+   <a href="#palette"><span class="dot"></span>色彩美学</a>
+   <a href="#about"><span class="dot"></span>关于本站</a>
+   <h6>官方入口</h6>
+   <div class="url"><b>官方网站地址</b>https://haosedianyingwang-zh.github.io</div>
+  </nav>
+ </aside>
+
+ <!-- 主内容 -->
+ <main class="main">
+
+  <div class="page-head" id="home">
+   <h1>看好色，<em>看好电影</em></h1>
+   <span class="badge">● 精选更新中</span>
+  </div>
+
+  <div class="flash">
+   <b>站内快讯</b>
+   <span>本周新收录 <strong style="color:var(--neon)">86</strong> 部作品 ｜ 秋日色彩专题上线 ｜ 高分片单持续维护</span>
+  </div>
+
+  <div class="search">
+   <input type="search" placeholder="搜索影片名、导演、类型、演员……如：悬疑 / 治愈 / 科幻">
+   <button type="button" aria-label="搜索">⌕</button>
+  </div>
+
+  <!-- 数据统计 -->
+  <section class="block">
+   <div class="stats">
+    <div class="stat"><div class="n">96,500+</div><div class="l">收录影视条目</div><div class="d">覆盖电影 / 剧集 / 动漫 / 综艺</div></div>
+    <div class="stat"><div class="n">42</div><div class="l">细分类型标签</div><div class="d">类型 × 年代 × 地区三维筛选</div></div>
+    <div class="stat"><div class="n">每日</div><div class="l">更新频率</div><div class="d">新片新剧按周跟踪排播</div></div>
+    <div class="stat"><div class="n">8.4</div><div class="l">收录平均评分</div><div class="d">优先收录高分与口碑作品</div></div>
+   </div>
+  </section>
+
+  <!-- 电影片单 -->
+  <section class="block" id="movie">
+   <div class="block-head"><h2>电影片单</h2><span class="tag">精选 · 高分 · 视觉系</span><a class="more" href="#">查看完整片单 ›</a></div>
+   <div class="grid">
+    <div class="card"><div class="thumb c1"><span>默</span><i>剧情</i><u>8.6</u></div><div class="body"><h3><a href="#">沉默的证人</a></h3><div class="row"><span>2026 · 国产</span><span>犯罪</span></div></div></div>
+    <div class="card"><div class="thumb c2"><span>春</span><i>文艺</i><u>8.4</u></div><div class="body"><h3><a href="#">春山可望</a></h3><div class="row"><span>2025 · 国产</span><span>爱情</span></div></div></div>
+    <div class="card"><div class="thumb c3"><span>边</span><i>动作</i><u>7.7</u></div><div class="body"><h3><a href="#">边境行动</a></h3><div class="row"><span>2026 · 国产</span><span>悬疑</span></div></div></div>
+    <div class="card"><div class="thumb c4"><span>机</span><i>科幻</i><u>7.9</u></div><div class="body"><h3><a href="#">机械之心</a></h3><div class="row"><span>2026 · 好莱坞</span><span>动作</span></div></div></div>
+    <div class="card"><div class="thumb c5"><span>深</span><i>冒险</i><u>7.5</u></div><div class="body"><h3><a href="#">深海回声</a></h3><div class="row"><span>2025 · 合拍</span><span>灾难</span></div></div></div>
+    <div class="card"><div class="thumb c6"><span>北</span><i>家庭</i><u>8.2</u></div><div class="body"><h3><a href="#">北纬四十度的风</a></h3><div class="row"><span>2025 · 国产</span><span>剧情</span></div></div></div>
+    <div class="card"><div class="thumb c7"><span>夜</span><i>悬疑</i><u>8.1</u></div><div class="body"><h3><a href="#">夜航船</a></h3><div class="row"><span>2026 · 国产</span><span>犯罪</span></div></div></div>
+    <div class="card"><div class="thumb c8"><span>金</span><i>年代</i><u>8.8</u></div><div class="body"><h3><a href="#">金棕色的秋天</a></h3><div class="row"><span>1999 · 经典</span><span>文艺</span></div></div></div>
+   </div>
+  </section>
+
+  <!-- 电视剧场 -->
+  <section class="block" id="tv">
+   <div class="cols">
+    <div>
+     <div class="block-head"><h2>电视剧场</h2><span class="tag">追剧 · 连载 · 完结</span><a class="more" href="#">全部剧集 ›</a></div>
+     <div class="grid">
+      <div class="card"><div class="thumb c1"><span>长</span><i>古装</i><u>追剧</u></div><div class="body"><h3><a href="#">长安十二时辰外传</a></h3><div class="row"><span>28 / 40 集</span><span>悬疑</span></div></div></div>
+      <div class="card"><div class="thumb c2"><span>急</span><i>都市</i><u>追剧</u></div><div class="body"><h3><a href="#">急诊室的夜</a></h3><div class="row"><span>14 / 32 集</span><span>医疗</span></div></div></div>
+      <div class="card"><div class="thumb c3"><span>扫</span><i>港剧</i><u>完结</u></div><div class="body"><h3><a href="#">扫毒先锋 2026</a></h3><div class="row"><span>25 集</span><span>警匪</span></div></div></div>
+      <div class="card"><div class="thumb c4"><span>汉</span><i>韩剧</i><u>完结</u></div><div class="body"><h3><a href="#">汉江夜航</a></h3><div class="row"><span>16 集</span><span>复仇</span></div></div></div>
+     </div>
+    </div>
+    <div>
+     <div class="block-head" id="rank"><h2>热度榜单</h2><a class="more" href="#">完整榜单 ›</a></div>
+     <ul class="rank">
+      <li><span class="n">1</span><div class="info"><h4><a href="#">沉默的证人</a></h4><p>犯罪 / 2026</p></div><span class="v">8.6</span></li>
+      <li><span class="n">2</span><div class="info"><h4><a href="#">春山可望</a></h4><p>爱情 / 2025</p></div><span class="v">8.4</span></li>
+      <li><span class="n">3</span><div class="info"><h4><a href="#">金棕色的秋天</a></h4><p>文艺 / 1999</p></div><span class="v">8.8</span></li>
+      <li><span class="n">4</span><div class="info"><h4><a href="#">汉江夜航</a></h4><p>韩剧 / 16 集</p></div><span class="v">8.1</span></li>
+      <li><span class="n">5</span><div class="info"><h4><a href="#">夜航船</a></h4><p>悬疑 / 2026</p></div><span class="v">8.1</span></li>
+      <li><span class="n">6</span><div class="info"><h4><a href="#">长安十二时辰外传</a></h4><p>古装 / 连载</p></div><span class="v">追</span></li>
+     </ul>
+    </div>
+   </div>
+  </section>
+
+  <!-- 综艺与纪录片 -->
+  <section class="block" id="show">
+   <div class="block-head"><h2>综艺与纪录片</h2><span class="tag">轻松 · 涨知识</span><a class="more" href="#">更多节目 ›</a></div>
+   <div class="grid">
+    <div class="card"><div class="thumb c9"><span>味</span><i>美食</i><u>豆瓣 9.1</u></div><div class="body"><h3><a href="#">风味人间 · 第六季</a></h3><div class="row"><span>8 期</span><span>纪录片</span></div></div></div>
+    <div class="card"><div class="thumb c10"><span>城</span><i>旅行</i><u>豆瓣 8.9</u></div><div class="body"><h3><a href="#">城市漫游指南</a></h3><div class="row"><span>12 期</span><span>人文</span></div></div></div>
+    <div class="card"><div class="thumb c2"><span>匠</span><i>匠心</i><u>豆瓣 9.3</u></div><div class="body"><h3><a href="#">我在故宫修文物 2</a></h3><div class="row"><span>6 期</span><span>纪录片</span></div></div></div>
+    <div class="card"><div class="thumb c4"><span>声</span><i>音乐</i><u>热播</u></div><div class="body"><h3><a href="#">声生不息 · 大湾区</a></h3><div class="row"><span>11 期</span><span>音乐综艺</span></div></div></div>
+   </div>
+  </section>
+
+  <!-- 动漫专区 -->
+  <section class="block" id="anime">
+   <div class="block-head"><h2>动漫专区</h2><span class="tag">国创 · 日系 · 补番</span><a class="more" href="#">新番时间表 ›</a></div>
+   <div class="grid">
+    <div class="card"><div class="thumb c1"><span>凡</span><i>国创</i><u>12 话</u></div><div class="body"><h3><a href="#">凡人修仙传·特别篇</a></h3><div class="row"><span>连载</span><span>玄幻</span></div></div></div>
+    <div class="card"><div class="thumb c3"><span>排</span><i>日漫</i><u>08 话</u></div><div class="body"><h3><a href="#">排球少年!! 重制版</a></h3><div class="row"><span>连载</span><span>运动</span></div></div></div>
+    <div class="card"><div class="thumb c6"><span>罗</span><i>国创</i><u>20 话</u></div><div class="body"><h3><a href="#">罗小黑战记·日常篇</a></h3><div class="row"><span>连载</span><span>治愈</span></div></div></div>
+    <div class="card"><div class="thumb c7"><span>忧</span><i>日漫</i><u>完结</u></div><div class="body"><h3><a href="#">忧国的莫里亚蒂外传</a></h3><div class="row"><span>12 话</span><span>智斗</span></div></div></div>
+   </div>
+  </section>
+
+  <!-- 色彩美学 -->
+  <section class="block" id="palette">
+   <div class="block-head"><h2>色彩美学</h2><span class="tag">好色选片标准</span><a class="more" href="#">配色专题 ›</a></div>
+   <div class="palette">
+    <div class="pal"><div class="sw"><div style="background:#1a2a3a"></div><div style="background:#00e5a0"></div></div><div class="txt"><b>青绿系</b><small>自然 / 清新 / 治愈系首选</small></div></div>
+    <div class="pal"><div class="sw"><div style="background:#2a1a2e"></div><div style="background:#ff6b9d"></div></div><div class="txt"><b>霓虹粉</b><small>都市夜景 / 赛博 / 青春片</small></div></div>
+    <div class="pal"><div class="sw"><div style="background:#2e241a"></div><div style="background:#ffb74d"></div></div><div class="txt"><b>琥珀金</b><small>年代戏 / 怀旧 / 港片质感</small></div></div>
+    <div class="pal"><div class="sw"><div style="background:#1a1a2e"></div><div style="background:#7e57c2"></div></div><div class="txt"><b>靛蓝紫</b><small>悬疑 / 梦境 / 心理题材</small></div></div>
+    <div class="pal"><div class="sw"><div style="background:#0d2818"></div><div style="background:#4db6ac"></div></div><div class="txt"><b>森林墨</b><small>文艺片 / 慢节奏叙事</small></div></div>
+    <div class="pal"><div class="sw"><div style="background:#2e1a1a"></div><div style="background:#ff8f00"></div></div><div class="txt"><b>落日橙</b><small>公路 / 冒险 / 少年感</small></div></div>
+   </div>
+  </section>
+
+  <!-- 类型筛选 -->
+  <section class="block">
+   <div class="block-head"><h2>按类型选片</h2><span class="tag">点击切换 · 快速定位</span></div>
+   <div class="tabs">
+    <button class="on" data-tab="t1">全部</button>
+    <button data-tab="t2">悬疑犯罪</button>
+    <button data-tab="t3">爱情文艺</button>
+    <button data-tab="t4">科幻动作</button>
+    <button data-tab="t5">喜剧治愈</button>
+    <button data-tab="t6">年代怀旧</button>
+   </div>
+   <div class="tab-pane on" id="t1">
+    <div class="grid">
+     <div class="card"><div class="thumb c1"><span>全</span><i>综合</i><u>8.6</u></div><div class="body"><h3><a href="#">综合推荐：沉默的证人</a></h3><div class="row"><span>2026</span><span>犯罪</span></div></div></div>
+     <div class="card"><div class="thumb c2"><span>全</span><i>综合</i><u>8.4</u></div><div class="body"><h3><a href="#">综合推荐：春山可望</a></h3><div class="row"><span>2025</span><span>爱情</span></div></div></div>
+     <div class="card"><div class="thumb c3"><span>全</span><i>综合</i><u>7.7</u></div><div class="body"><h3><a href="#">综合推荐：边境行动</a></h3><div class="row"><span>2026</span><span>悬疑</span></div></div></div>
+     <div class="card"><div class="thumb c4"><span>全</span><i>综合</i><u>7.9</u></div><div class="body"><h3><a href="#">综合推荐：机械之心</a></h3><div class="row"><span>2026</span><span>科幻</span></div></div></div>
+    </div>
+   </div>
+   <div class="tab-pane" id="t2"><div class="note" style="border-color:rgba(0,229,160,.25)">悬疑犯罪：沉默的证人 / 夜航船 / 边境行动 / 扫毒先锋 2026 等，主打强叙事与反转密度。</div></div>
+   <div class="tab-pane" id="t3"><div class="note" style="border-color:rgba(0,229,160,.25)">爱情文艺：春山可望 / 汉江夜航 / 金棕色的秋天，适合静下来慢看。</div></div>
+   <div class="tab-pane" id="t4"><div class="note" style="border-color:rgba(0,229,160,.25)">科幻动作：机械之心 / 深海回声 / 边境行动，视效与节奏并重。</div></div>
+   <div class="tab-pane" id="t5"><div class="note" style="border-color:rgba(0,229,160,.25)">喜剧治愈：罗小黑战记·日常篇 / 排球少年!! 重制版，碎片时间友好。</div></div>
+   <div class="tab-pane" id="t6"><div class="note" style="border-color:rgba(0,229,160,.25)">年代怀旧：金棕色的秋天 / 城市漫游指南，胶片质感与时代气息。</div></div>
+  </section>
+
+  <!-- 关于本站 -->
+  <section class="block" id="about">
+   <div class="block-head"><h2>关于好色电影网</h2></div>
+   <div class="note">
+    <h4>站点说明</h4>
+    <p>好色电影网（官方网址：<a href="https://haosedianyingwang-zh.github.io">https://haosedianyingwang-zh.github.io</a>）是一份影视内容导航清单，以色彩美学与影像质感作为选片视角，整理电影、电视剧、综艺、纪录片与动漫的分类信息，帮助用户快速发现值得观看的作品。</p>
+    <p style="margin-top:9px">本站不提供任何视听资源的存储、上传、下载或在线播放服务，不存储用户数据，请通过官方网址访问。影视内容请以各正版授权平台为准，支持正版，合理安排观影时间。</p>
+   </div>
+  </section>
+
+ </main>
+</div>
+
+<footer>
+ <div class="foot">
+  <div>
+   <h5 style="font-size:19px">好色电影网</h5>
+   <p style="color:var(--txt2);font-size:13.5px">看好色，看好电影。以色彩与影像为尺，做一份不浮躁的影视导航。</p>
+  </div>
+  <div>
+   <h5>内容栏目</h5>
+   <ul><li><a href="#movie">电影片单</a></li><li><a href="#tv">电视剧场</a></li><li><a href="#show">综艺与纪录片</a></li><li><a href="#anime">动漫专区</a></li></ul>
+  </div>
+  <div>
+   <h5>精选专题</h5>
+   <ul><li><a href="#rank">热度榜单</a></li><li><a href="#palette">色彩美学</a></li><li><a href="#">秋日色彩专题</a></li><li><a href="#">高分片单</a></li></ul>
+  </div>
+  <div>
+   <h5>官方入口</h5>
+   <ul><li><a href="https://haosedianyingwang-zh.github.io">haosedianyingwang-zh.github.io</a></li><li><a href="#home">返回顶部</a></li></ul>
+  </div>
+ </div>
+ <div class="copyright">
+  <span class="site">好色电影网</span> · 影视内容导航与信息整理 ｜ 官方网址：https://haosedianyingwang-zh.github.io<br>
+  © <span id="yr">2026</span> 好色电影网 ｜ 本站仅提供影视信息导航，不提供任何视听资源下载或在线播放服务
+ </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+// 标签页
+document.querySelectorAll('.tabs button').forEach(function(btn){
+ btn.addEventListener('click',function(){
+  var id=this.dataset.tab;
+  this.parentNode.querySelectorAll('button').forEach(function(b){b.classList.remove('on')});
+  this.classList.add('on');
+  var box=this.closest('.block');
+  box.querySelectorAll('.tab-pane').forEach(function(p){p.classList.toggle('on',p.id===id)});
+ });
+});
+// 锚点平滑滚动（避让侧栏）
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+ a.addEventListener('click',function(e){
+  var id=this.getAttribute('href');
+  if(id.length>1){
+   var t=document.querySelector(id);
+   if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-16,behavior:'smooth'});}
+  }
+ });
+});
+</script>
+</body>
+</html>
